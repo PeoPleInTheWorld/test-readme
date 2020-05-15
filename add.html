@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+    <title>添加设备</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/css.css"/>
+    <style>
+        button{padding:10px 20px;}
+    </style>
+</head>
+<body>
+<header>
+    <a id="backPrev" class="left"></a>
+    <div class="tit">尝试与设备建立连接</div>
+</header>
+<div class="fxBox pb50">
+    <!--content-->
+    <div class="wifi_cont">
+        <div class="step1_img1 duop">
+            <img src="images/add.png" alt=""/>
+            <p>1、请将设备接通电源;</p>
+            <p>2、打开电源键;</p>
+            <p>3、长按设备上的Wi-Fi按钮3秒后，<br />点击下一步</p>
+        </div>
+    </div>
+    <a class="remove_gad" href="wifi_login_add.html">下一步</a>
+    <!--content end-->
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/lenovoSmartJsSdk.js"></script>
+<script src="js/js.js" type="text/javascript"></script>
+<script>
+    //首页返回
+    $("#backPrev").click(function(){
+        LenSmJs.HtmlJumpApp_h5("AddGadgetList");
+        LenSmJs.initFinish_h5();
+    });
+    //安卓点击物理返回键调用
+    function androidCellBack(){
+        if(LenSmJs.isAndroid == true){
+            LenSmJs.h5log("add点击了物理返回");
+            LenSmJs.HtmlJumpApp_h5("AddGadgetList");
+            LenSmJs.initFinish_h5();
+        }
+    }
+</script>
+</body>
+</html>
